@@ -7,7 +7,7 @@ test('Navigate to iFrame', async ({ page }) => {
 
   await page.waitForSelector('iframe');
   const textEditorFrame: FrameLocator = page.frameLocator('#iFrame1');
-  await textEditorFrame.getByText('Your content.').fill('praveen');
+  await textEditorFrame.getByText('Your content.').fill('praveen', {timeout : 5000} );
 
   const webpageFrame = page.frame({ url: 'https://www.lambdatest.com/support/docs/' });
 

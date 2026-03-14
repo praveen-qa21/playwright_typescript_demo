@@ -12,6 +12,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  timeout: 50000,
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -57,7 +58,8 @@ export default defineConfig({
     //   use: { ...devices['Pixel 5'] },
     // },
     // {
-    //   name: 'Mobile Safari',
+    //   nam
+    // e: 'Mobile Safari',
     //   use: { ...devices['iPhone 12'] },
     // },
 

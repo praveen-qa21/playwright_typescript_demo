@@ -1,15 +1,16 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, request as newRequest } from "@playwright/test";
 
-test("a simple GET request to fetch all employees", async ({ request }) => {
+test("a simple GET request to fetch all employees", async ({ request,context,page:adsfasdf }) => {
+
+    adsfasdf.getByRole("alert").click();
+     
+context.request.get("/");
+adsfasdf.request.get("/")
 
     const response = await request.get("http://localhost:3000/employees/");
     expect(response.status()).toBe(200);
 
 
-    //sample response object
-    // [
-    //   {
-    //     id: 1,
     //     first_name: 'Sebastian',
     //     last_name: 'Eschweiler',
     //     email: 'sebastian@codingthesmartway.com'
@@ -36,7 +37,12 @@ test("a simple GET request to fetch all employees", async ({ request }) => {
 
 });
 
-test("SIMPLE POST, PUT, DELETE Request", async ({ request }) => {
+test("SIMPLE POST, PUT, DELETE Request", async ({ request, page, context }) => {
+
+   
+   
+
+
 
     //Creating New Entry using POST
     const postResponse = await request.post("http://localhost:3000/employees", {
